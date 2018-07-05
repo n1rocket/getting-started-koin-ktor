@@ -24,10 +24,18 @@ All sources are available in the Koin's [github repository](https://github.com/E
 
 Let's go 🚀
 
-## Github & Sources
+## Get the code
 
-<div class="alert alert-secondary" role="alert">
-    You can checkout the project directly from <a href="https://github.com/InsertKoinIO/getting-started-koin-ktor">Github</a> or download the <a href="https://github.com/InsertKoinIO/getting-started-koin-ktor/archive/master.zip">zip</a>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      Checkout the project directly on Github or download the zip file
+    </div>
+    <div class="col">
+      <a href="https://github.com/InsertKoinIO/getting-started-koin-ktor" class="btn btn-outline-primary mb-3 mb-md-0 mr-md-3">Go to Github</a>
+      <a href="https://github.com/InsertKoinIO/getting-started-koin-ktor/archive/master.zip" class="btn btn-outline-info mb-3 mb-md-0 mr-md-3">Download Zip</a>
+    </div>
+  </div>
 </div>
 
 ## Gradle Setup
