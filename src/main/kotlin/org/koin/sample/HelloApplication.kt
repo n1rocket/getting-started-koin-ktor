@@ -12,12 +12,10 @@ import io.ktor.server.engine.commandLineEnvironment
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import org.koin.ktor.ext.inject
+import org.koin.ktor.ext.installKoin
 import org.koin.log.Logger.SLF4JLogger
-import org.koin.standalone.StandAloneContext
 
 fun main(args: Array<String>) {
-    // Start Koin
-    StandAloneContext.startKoin(listOf(helloAppModule), logger = SLF4JLogger())
     // Start Ktor
     embeddedServer(Netty, commandLineEnvironment(args)).start()
 }
@@ -26,6 +24,7 @@ fun Application.main() {
     // Install Ktor features
     install(DefaultHeaders)
     install(CallLogging)
+    installKoin(listOf(helloAppModule), logger = SLF4JLogger())
 
     // Lazy inject HelloService
     val service by inject<HelloService>()
