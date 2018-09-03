@@ -14,7 +14,7 @@ buildscript {
     }
 }
 
-group 'org.koin.sample.spark'
+group 'org.koin.sample.ktor'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
