@@ -121,7 +121,7 @@ Let's assemble our components with a Koin module:
 
 {% highlight kotlin %}
 val helloAppModule = module {
-    single { HelloServiceImpl(get()) as HelloService } // get() Will resolve HelloRepository
+    single<HelloService> { HelloServiceImpl(get()) } // get() Will resolve HelloRepository
     single { HelloRepository() }
 }
 {% endhighlight %}

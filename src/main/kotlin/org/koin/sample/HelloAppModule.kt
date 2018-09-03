@@ -4,13 +4,15 @@ import org.koin.dsl.module.module
 import org.koin.experimental.builder.single
 import org.koin.experimental.builder.singleBy
 
+
 val helloAppModule = module(createOnStart = true) {
-    singleBy<HelloServiceImpl, HelloService>()
-    single<HelloRepository>()
+    single<HelloService> { HelloServiceImpl(get()) }
+    single { HelloRepository() }
 }
 
-// or
+// or with reflect builders
+
 //val helloAppModule = module(createOnStart = true) {
-//    single<HelloService> { HelloServiceImpl(get()) }
-//    single { HelloRepository() }
+//    singleBy<HelloServiceImpl, HelloService>()
+//    single<HelloRepository>()
 //}
