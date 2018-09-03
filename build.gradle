@@ -8,8 +8,6 @@ buildscript {
         jcenter()
     }
     dependencies {
-        // AsciiDoc
-        classpath "org.asciidoctor:asciidoctor-gradle-plugin:$asciidoctor_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }

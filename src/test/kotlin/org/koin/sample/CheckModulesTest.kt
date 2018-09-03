@@ -6,7 +6,7 @@ import org.koin.standalone.StandAloneContext
 import org.koin.test.KoinTest
 import org.koin.test.checkModules
 
-class CheckTest : KoinTest {
+class CheckModulesTest : KoinTest {
 
     @After
     fun after() {
