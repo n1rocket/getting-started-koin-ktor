@@ -1,20 +1,16 @@
 package org.koin.sample
 
-import org.junit.After
 import org.junit.Test
-import org.koin.standalone.StandAloneContext
-import org.koin.test.KoinTest
-import org.koin.test.checkModules
+import org.koin.dsl.koinApplication
+import org.koin.test.check.checkModules
 
-class CheckModulesTest : KoinTest {
-
-    @After
-    fun after() {
-        StandAloneContext.stopKoin()
-    }
+class CheckModulesTest {
 
     @Test
     fun checkAllModules() {
-        checkModules(listOf(helloAppModule))
+        koinApplication {
+            logger()
+            modules(helloAppModule)
+        }.checkModules()
     }
 }

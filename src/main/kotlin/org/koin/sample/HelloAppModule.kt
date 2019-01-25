@@ -1,10 +1,10 @@
 package org.koin.sample
 
-import org.koin.dsl.module.module
+import org.koin.dsl.module
 import org.koin.experimental.builder.single
 import org.koin.experimental.builder.singleBy
 
-val helloAppModule = module(createOnStart = true) {
+val helloAppModule = module(createdAtStart = true) {
     singleBy<HelloService, HelloServiceImpl>()
     single<HelloRepository>()
 }

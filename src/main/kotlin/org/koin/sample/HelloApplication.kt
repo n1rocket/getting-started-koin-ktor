@@ -11,9 +11,9 @@ import io.ktor.routing.routing
 import io.ktor.server.engine.commandLineEnvironment
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
+import org.koin.Logger.slf4jLogger
 import org.koin.ktor.ext.inject
 import org.koin.ktor.ext.installKoin
-import org.koin.log.Logger.SLF4JLogger
 
 fun main(args: Array<String>) {
     // Start Ktor
@@ -24,7 +24,10 @@ fun Application.main() {
     // Install Ktor features
     install(DefaultHeaders)
     install(CallLogging)
-    installKoin(listOf(helloAppModule), logger = SLF4JLogger())
+    installKoin {
+        slf4jLogger()
+        modules(helloAppModule)
+    }
 
     // Lazy inject HelloService
     val service by inject<HelloService>()
