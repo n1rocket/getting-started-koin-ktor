@@ -12,8 +12,8 @@ import io.ktor.server.engine.commandLineEnvironment
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import org.koin.Logger.slf4jLogger
+import org.koin.ktor.ext.Koin
 import org.koin.ktor.ext.inject
-import org.koin.ktor.ext.installKoin
 
 fun main(args: Array<String>) {
     // Start Ktor
@@ -24,7 +24,7 @@ fun Application.main() {
     // Install Ktor features
     install(DefaultHeaders)
     install(CallLogging)
-    installKoin {
+    install(Koin) {
         slf4jLogger()
         modules(helloAppModule)
     }
