@@ -10,7 +10,7 @@ class CheckModulesTest {
     fun checkAllModules() {
         koinApplication {
             printLogger()
-            modules(helloAppModule)
+            modules(appModule)
         }.checkModules()
     }
 }

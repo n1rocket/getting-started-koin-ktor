@@ -110,7 +110,7 @@ ktor {
     }
 
     application {
-        modules = [ org.koin.sample.HelloApplicationKt.main ]
+        modules = [ org.koin.sample.AppKt.main ]
     }
 }
 {% endhighlight %}
